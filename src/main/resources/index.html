@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Binary Tree Visualization</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+    </head>
+    <body>
+    <div class="container py-4">
+        <p class="mb-5 text-center text-md-start fs-6">
+            Реализация алгоритма вставки, поиска и отрисовки бинарного дерева
+        </p>
+        <p class="fs-5 mt-4">Демонстрация алгоритма вставки</p>
+	<hr>
+        <div class="row mb-4 g-3">
+            <div class="col-12 col-md-2">
+                <input type="text" class="form-control" id="insertValue" placeholder="Значение для вставки" />
+            </div>
+            <div class="col-12 col-md-4">
+                <select class="form-select" id="typeSelect">
+                    <option disabled selected>Тип данных</option>
+                    <option value="string">Text</option>
+                    <option value="int">Integer</option>
+                    <option value="double">Double</option>
+                </select>
+            </div>
+            <div class="col-6 col-md-2">
+                <button class="btn btn-light w-100" onclick="insert()">Вставить</button>
+            </div>
+            <div class="col-6 col-md-2">
+                <button class="btn btn-light w-100" onclick="reset()">Сбросить</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" style="overflow-x: auto;">
+                <svg id="tree-container"></svg>
+            </div>
+        </div>
+        <p class="fs-5 mt-4">Профилирование операций</p>
+        <hr>
+        <div class="row mb-4 g-3">
+            <div class="col-12 col-md-2">
+                <input type="text" class="form-control" id="insertSize" placeholder="Кол-во элементов" />
+            </div>
+            <div class="col-12 col-md-2">
+                <button type="button" class="btn btn-light w-100" onclick="insertProfile()">Вставить</button>
+            </div>
+            <p id="insertProfileResult"></p>
+            <div class="col-12 col-md-2">
+                <input type="text" class="form-control" id="searchElement" placeholder="Найти значение" />
+            </div>
+            <div class="col-12 col-md-2">
+                <button type="button" class="btn btn-light w-100" onclick="searchElement()">Выполнить поиск</button>
+            </div>
+            <p id="element"></p>
+        </div>
+        <button type="button" class="btn btn-light w-100" onclick="elements()">Выгрузить вставленные значения</button>
+        <p class="text-break mt-4" id="elements"></p>
+    </div>
+    <script src="app.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,51 @@
+body {
+    overflow: auto;
+}
+
+.tree-node {
+    fill: #96a1ff;
+    transform-origin: center;
+    /*animation: nodeAppear 2s ease forwards;*/
+}
+
+text {
+    fill: white;
+    /*animation: nodeAppear 2s ease forwards;*/
+}
+
+.highlight-compare {
+    fill: #f57474;
+}
+
+.highlight-found {
+    fill: lightgreen;
+}
+
+@keyframes drawLine {
+    from {
+        stroke-dashoffset: 60;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.animated-line {
+    stroke-dasharray: 10; /* большое значение для длины линии */
+    stroke-dashoffset: 40;
+    animation: drawLine 2s forwards ease-out;
+}
+
+@keyframes nodeAppear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#tree-container {
+    width: 100vw;
+    min-height: 100vh
+}
